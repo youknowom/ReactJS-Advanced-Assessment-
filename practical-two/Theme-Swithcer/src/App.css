@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: var(--page-bg);
+  color: var(--page-text);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.app-shell[data-theme="light"] {
+  --page-bg: #f7f7f7;
+  --page-text: #111111;
+  --card-bg: #ffffff;
+  --card-border: #dddddd;
+  --accent: #111111;
+  --accent-text: #ffffff;
+}
+
+.app-shell[data-theme="dark"] {
+  --page-bg: #111111;
+  --page-text: #f5f5f5;
+  --card-bg: #1b1b1b;
+  --card-border: #333333;
+  --accent: #f5f5f5;
+  --accent-text: #111111;
+}
+
+.theme-card {
+  width: min(100%, 320px);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  background: var(--card-bg);
+  text-align: center;
+}
+
+.theme-label {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.toggle-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--accent);
+  color: var(--accent-text);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.toggle-button:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
